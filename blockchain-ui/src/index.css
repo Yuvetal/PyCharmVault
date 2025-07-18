@@ -5,9 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  /* Mega Charizard X-inspired background */
+  background: linear-gradient(135deg, #0b0c10, #1f2833, #00bcd4);
+  background-attachment: fixed;
+  background-size: cover;
+  color: #ffffff;
 }

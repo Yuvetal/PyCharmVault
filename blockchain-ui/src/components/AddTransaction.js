@@ -1,4 +1,5 @@
 // src/components/AddTransaction.js
+import "./AddTransaction.css";
 import React, { useState } from "react";
 import "../App.css";
 
@@ -10,12 +11,25 @@ const AddTransaction = () => {
   const [userOtp, setUserOtp] = useState("");
   const [message, setMessage] = useState("");
 
+  const isValidPhoneNumber = (number) => {
+    return (
+      /^[6-9]\d{9}$/.test(number) // starts with 6-9, only digits, exactly 10 digits
+    );
+  };
+
   const handleSendOtp = (e) => {
     e.preventDefault(); // prevent any page reload
+
     if (!txnData || !phone) {
       setMessage("⚠️ Please enter both transaction and phone number.");
       return;
     }
+
+    if (!isValidPhoneNumber(phone)) {
+      setMessage("⚠️ Invalid phone number. Must be 10 digits, start with 6/7/8/9, and contain only digits.");
+      return;
+    }
+
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
     setGeneratedOtp(otp);
     setOtpSent(true);
@@ -63,45 +77,42 @@ const AddTransaction = () => {
     }
   };
 
-  return (
-    <div className="App">
-      <h2>📥 Add Blockchain Transaction</h2>
+return (
+  <div className="transaction-container">
+    <h2>📥 Add Blockchain Transaction</h2>
 
-      <form onSubmit={handleVerifyAndSubmit}>
-        <input
-          type="text"
-          placeholder="Enter transaction details"
-          value={txnData}
-          onChange={(e) => setTxnData(e.target.value)}
-        />
-        <br />
-        <input
-          type="text"
-          placeholder="Enter phone number"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-        />
-        <br />
-        <button onClick={handleSendOtp}>Send OTP</button>
+    <form className="transaction-form" onSubmit={handleVerifyAndSubmit}>
+      <input
+        type="text"
+        placeholder="Enter transaction details"
+        value={txnData}
+        onChange={(e) => setTxnData(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Enter phone number"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
+      />
+      <button onClick={handleSendOtp}>Send OTP</button>
 
-        {otpSent && (
-          <>
-            <br />
-            <input
-              type="text"
-              placeholder="Enter OTP"
-              value={userOtp}
-              onChange={(e) => setUserOtp(e.target.value)}
-            />
-            <br />
-            <button type="submit">Verify & Add</button>
-          </>
-        )}
-      </form>
+      {otpSent && (
+        <>
+          <input
+            type="text"
+            placeholder="Enter OTP"
+            value={userOtp}
+            onChange={(e) => setUserOtp(e.target.value)}
+          />
+          <button class="glow-button"type="submit">Verify & Add</button>
+        </>
+      )}
+    </form>
 
-      <p>{message}</p>
-    </div>
-  );
+    <p>{message}</p>
+  </div>
+);
+
 };
 
 export default AddTransaction;

@@ -1,0 +1,126 @@
+.transaction-container {
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center the text */
+}
+
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center child elements horizontally */
+}
+
+.transaction-form input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  text-align: center; /* Center the text inside input fields */
+}
+
+.transaction-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.transaction-form button:hover {
+  background-color: #0056b3;
+}
+.transaction-container {
+  background: linear-gradient(135deg, #1a1a1a, #262626);
+  padding: 24px;
+  margin: 40px auto;
+  max-width: 550px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(0, 132, 255, 0.3);
+  text-align: center;
+  color: #f5f5f5;
+  border: 2px solid #00bfff;
+}
+
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.transaction-form input {
+  width: 90%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #00bfff;
+  background-color: #121212;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+.transaction-form input::placeholder {
+  color: #999;
+}
+
+.transaction-form button {
+  background: #00bcd4;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 90%;
+  transition: background 0.3s;
+  font-weight: bold;
+  box-shadow: 0 0 8px #00bfff;
+}
+
+.transaction-form button:hover {
+  background: linear-gradient(90deg, #3ec7e0, #526bf4); /* neon cyan to indigo */
+  box-shadow: 0 0 12px #3ec7e0, 0 0 20px #526bf4;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.transaction-form button.glow {
+  box-shadow: 0 0 8px #00bcd4, 0 0 15px #00bcd4;
+}
+input {
+  border: 1px solid #00bfff;
+  box-shadow: 0 0 8px #00bfff88;
+}
+.glow-button {
+  box-shadow:
+    0 0 10px #ff4500,
+    0 0 20px #00bfff;
+}
+h2 {
+  color: #fff;
+  text-shadow: 0 0 8px #00bfff, 0 0 15px #0077ff;
+}
+.container {
+  box-shadow:
+    0 0 20px #00bfff,
+    0 0 40px #0044ff inset;
+}
+body {
+  background: radial-gradient(circle at 30% 30%, #002233, #000000 80%);
+  animation: pulse 4s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    background-color: #001122;
+  }
+  50% {
+    background-color: #002244;
+  }
+}
